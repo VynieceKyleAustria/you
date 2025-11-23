@@ -99,7 +99,7 @@
   <!-- Soft Animated Roses Background -->
   <div id="petalsContainer" style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:hidden;"></div>
 
-  <h1>Good Morning, Beautiful 🌹</h1>
+   <h1>Good Morning, Beautiful 🌹</h1>
   <p>
     I had help to make this one, but, the purpose of this is  
     <p></p>to let you know that you are always loved no matter what.
@@ -111,26 +111,16 @@
     </p>Dream BIG! Dream HIGH! and most importantlym, SMILE!
   </p>
 
-  <button id="playButton">Play Morning Music</button>
+  <button id="playButton">Play This</button>
   <audio id="bgMusic" preload="auto">
     <source src="you!.mp3" type="audio/mpeg">
   </audio>
 
   <div id="lyricsContainer"></div>
 
-  <!-- EmailJS SDK -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function(){
-      emailjs.init({
-        publicKey: "W1BLC17AsaQsKfEIn", // <-- Replace with your EmailJS public key
-      });
-    })();
   </script>
 
   <script>
-  
-
     function createPetal() {
       const petal = document.createElement('div');
       petal.textContent = '🌹';
@@ -158,34 +148,8 @@
       });
     });
 
-    // Email notification when bell is clicked using EmailJS
-    const bell = document.getElementById('notifyBell');
-    bell.addEventListener('click', () => {
-      console.log('Bell clicked, attempting to send email...'); // Debug log
-      emailjs.send(
-        "service_bqjxh4d", // <-- Replace with your EmailJS service ID
-        "template_aae9vwx", // <-- Replace with your EmailJS template ID
-        {
-          to_email: "vyniecekyle@gmail.com", // <-- Replace with your actual email address
-          message: "She clicked the bell!",
-        }
-      )
-      .then((response) => {
-        console.log('Email sent successfully:', response); // Debug log
-        bell.textContent = '✨';
-      })
-      .catch((error) => {
-        console.error('Error sending email:', error);
-        alert('Failed to send notification. Check console for details.');
-      });
-    });
+
   </script>
-
-  <p id="guideText">
-    When you're ready, tap the bell below to let me know you received this little morning surprise. 💗
-  </p>
-
-  <button id="notifyBell" style="margin-top:20px; background:none; border:none; font-size:2.5rem; cursor:pointer; animation:floatBell 3s infinite ease-in-out;">🔔</button>
 
 </body>
 </html>
